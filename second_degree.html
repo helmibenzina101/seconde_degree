@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="a" ><label> x^2 +</label>
+    <input type="number" id="b" ><label> +x +</label>
+    <input type="number" id="c" >=0<br><br>
+    <button type="button" onclick="deploy_values()">resoudre</button>
+    <label>X1</label><input type="number" id="x1" >
+    <label>X2</label><input type="number" id="x2" >
+
+    <script>
+        function deploy_values()
+     {
+     let x1 , x2;    
+     let a=document.getElementById("a").value;
+     let b=document.getElementById("b").value;
+     let c=document.getElementById("c").value;
+     delta=(b**2)-(4*a*c); 
+     console.log("delta=",delta);
+
+     if (delta>0)
+     {
+        x1=(-b-Math.sqrt(delta))/2*a
+        x2=(-b+Math.sqrt(delta))/2*a
+
+     }
+     else if (delta=0)
+     {
+        x1=-b/2*a;
+        x2=-b/2*a;
+
+     }
+     else 
+     {
+        x1=null;
+        x2=null;
+        alert("pas de solution");
+     }
+     
+        document.getElementById("x1").value=x1;
+        document.getElementById("x2").value=x2;
+     }
+
+    </script>
+
+</body>
+</html>
